@@ -1,4 +1,4 @@
-package KotlinValType
+package KotlinDegiskenler
 
 fun booleanType()
 {

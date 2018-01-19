@@ -1,6 +1,0 @@
-package KotlinValType
-
-fun BolumSonuCanavari()
-{
-    
-}

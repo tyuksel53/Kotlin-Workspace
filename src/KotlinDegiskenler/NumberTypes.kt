@@ -1,4 +1,4 @@
-package KotlinValType
+package KotlinDegiskenler
 
 fun byteDegerAralik() // 8 bit
 {

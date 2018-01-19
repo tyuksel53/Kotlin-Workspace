@@ -1,4 +1,4 @@
-package KotlinValType
+package KotlinDegiskenler
 
 fun sabitler(){
     val pi:Double = 3.14 /* val == const */

@@ -1,4 +1,4 @@
-package KotlinValType
+package KotlinDegiskenler
 
 fun casting(){
     var shortVal:Short = Short.MAX_VALUE
