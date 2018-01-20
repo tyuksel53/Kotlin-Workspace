@@ -1,7 +1,6 @@
-import KotlinBeforeNesne.*
+import KotlinOOP.*
 
 
 fun main(args: Array<String>) {
-    mundi()
-    mundi("asdasd")
+   //KotlinOOP.main()
 }
