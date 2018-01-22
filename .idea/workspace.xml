@@ -2,18 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a6b5d23-5244-4cf0-8f47-23520654f3db" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinAbstract/Abstract.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinAbstract/Interface.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinAbstract/InterfaceKalitim.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinAbstract/Isimsizler.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinAbstract/Kompozisyon.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinAbstract/NestedInner.kt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinAbstract/Static.kt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinDataClass/DataClass.kt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinDataClass/GetterSetterEnum.kt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinException/Exception.kt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinGeneric/Generic.kt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinGeneric/GenericMetod.kt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinKoleksiyonlar/Koleksiyon/Koleksiyon.kt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinOzelFonksiyonlar/HighOrderFun.kt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinOzelFonksiyonlar/OperatorOverloading.kt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/KotlinOzelFonksiyonlar/Recusive.kt" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinKalıtım/Hayvan.class" afterPath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinKalıtım/Hayvan.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinKalıtım/Kartal.class" afterPath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinKalıtım/Kartal.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinKalıtım/LateBindingKt.class" afterPath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinKalıtım/LateBindingKt.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinKalıtım/Timsah.class" afterPath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinKalıtım/Timsah.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin Playground/META-INF/Kotlin Playground.kotlin_module" afterPath="$PROJECT_DIR$/out/production/Kotlin Playground/META-INF/Kotlin Playground.kotlin_module" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinAbstract/AbstractKt.class" afterPath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinAbstract/AbstractKt.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinAbstract/Calisan.class" afterPath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinAbstract/Calisan.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinAbstract/Mudur.class" afterPath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinAbstract/Mudur.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinAbstract/Programci.class" afterPath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinAbstract/Programci.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinAbstract/SatisSorumlusu.class" afterPath="$PROJECT_DIR$/out/production/Kotlin Playground/KotlinAbstract/SatisSorumlusu.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kotlin Playground/META-INF/Kotlin Playground.kotlin_module" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kotlin Playground/MainKt.class" afterPath="$PROJECT_DIR$/out/production/Kotlin Playground/MainKt.class" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" afterPath="$PROJECT_DIR$/src/Main.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +36,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Isimsizler.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/KotlinAbstract/Isimsizler.kt">
+      <file leaf-file-name="HighOrderFun.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/KotlinOzelFonksiyonlar/HighOrderFun.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="61" lean-forward="false" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+            <state relative-caret-position="223">
+              <caret line="34" column="40" lean-forward="false" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Diziler.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/KotlinDiziler/Diziler.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-120">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,7 +104,6 @@
         <option value="$PROJECT_DIR$/src/KotlinOOP/OOP.kt" />
         <option value="$PROJECT_DIR$/src/KotlinOOP/Ogrenci.kt" />
         <option value="$PROJECT_DIR$/src/KotlinOOP/User.kt" />
-        <option value="$PROJECT_DIR$/src/Main.kt" />
         <option value="$PROJECT_DIR$/src/KotlinOOP/Kare.kt" />
         <option value="$PROJECT_DIR$/src/KotlinOOP/Daire.kt" />
         <option value="$PROJECT_DIR$/src/KotlinKalıtım/Kalitim.kt" />
@@ -103,6 +119,17 @@
         <option value="$PROJECT_DIR$/src/KotlinAbstract/InterfaceKalitim.kt" />
         <option value="$PROJECT_DIR$/src/KotlinAbstract/NestedInner.kt" />
         <option value="$PROJECT_DIR$/src/KotlinAbstract/Isimsizler.kt" />
+        <option value="$PROJECT_DIR$/src/KotlinDataClass/DataClass.kt" />
+        <option value="$PROJECT_DIR$/src/KotlinDataClass/GetterSetterEnum.kt" />
+        <option value="$PROJECT_DIR$/src/KotlinGeneric/Generic.kt" />
+        <option value="$PROJECT_DIR$/src/KotlinAbstract/Static.kt" />
+        <option value="$PROJECT_DIR$/src/KotlinGeneric/GenericMetod.kt" />
+        <option value="$PROJECT_DIR$/src/KotlinKoleksiyonlar/Koleksiyon/Koleksiyon.kt" />
+        <option value="$PROJECT_DIR$/src/Main.kt" />
+        <option value="$PROJECT_DIR$/src/KotlinException/Exception.kt" />
+        <option value="$PROJECT_DIR$/src/KotlinOzelFonksiyonlar/Mundi.kt" />
+        <option value="$PROJECT_DIR$/src/KotlinOzelFonksiyonlar/Recusive.kt" />
+        <option value="$PROJECT_DIR$/src/KotlinOzelFonksiyonlar/HighOrderFun.kt" />
       </list>
     </option>
   </component>
@@ -152,9 +179,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,13 +197,20 @@
               <item name="Kotlin Playground" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kotlin Playground" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="KotlinAbstract" type="462c0819:PsiDirectoryNode" />
+              <item name="KotlinDiziler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kotlin Playground" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kotlin Playground" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="KotlinOzelFonksiyonlar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -203,7 +236,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.KotlinAbstract.AbstractKt">
+  <component name="RunManager" selected="Kotlin.KotlinOzelFonksiyonlar.HighOrderFunKt">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -245,62 +278,62 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="KotlinAbstract.AbstractKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="KotlinException.ExceptionKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="KotlinAbstract.AbstractKt" />
+      <option name="MAIN_CLASS_NAME" value="KotlinException.ExceptionKt" />
       <option name="WORKING_DIRECTORY" />
       <module name="Kotlin Playground" />
       <envs />
     </configuration>
-    <configuration name="KotlinKalıtım.InsanKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="KotlinKoleksiyonlar.Koleksiyon.KoleksiyonKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="KotlinKalıtım.InsanKt" />
+      <option name="MAIN_CLASS_NAME" value="KotlinKoleksiyonlar.Koleksiyon.KoleksiyonKt" />
       <option name="WORKING_DIRECTORY" />
       <module name="Kotlin Playground" />
       <envs />
     </configuration>
-    <configuration name="KotlinKalıtım.LateBindingKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="KotlinOzelFonksiyonlar.HighOrderFunKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="KotlinKalıtım.LateBindingKt" />
+      <option name="MAIN_CLASS_NAME" value="KotlinOzelFonksiyonlar.HighOrderFunKt" />
       <option name="WORKING_DIRECTORY" />
       <module name="Kotlin Playground" />
       <envs />
     </configuration>
-    <configuration name="KotlinKalıtım.PersonKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="KotlinOzelFonksiyonlar.OperatorOverloadingKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="KotlinKalıtım.PersonKt" />
+      <option name="MAIN_CLASS_NAME" value="KotlinOzelFonksiyonlar.OperatorOverloadingKt" />
       <option name="WORKING_DIRECTORY" />
       <module name="Kotlin Playground" />
       <envs />
     </configuration>
-    <configuration name="KotlinKalıtım.PolymorfizmKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="KotlinOzelFonksiyonlar.RecusiveKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="KotlinKalıtım.PolymorfizmKt" />
+      <option name="MAIN_CLASS_NAME" value="KotlinOzelFonksiyonlar.RecusiveKt" />
       <option name="WORKING_DIRECTORY" />
       <module name="Kotlin Playground" />
       <envs />
@@ -359,19 +392,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Kotlin.MainKt" />
-      <item index="1" class="java.lang.String" itemvalue="Kotlin.KotlinKalıtım.PersonKt" />
-      <item index="2" class="java.lang.String" itemvalue="Kotlin.KotlinKalıtım.InsanKt" />
-      <item index="3" class="java.lang.String" itemvalue="Kotlin.KotlinKalıtım.PolymorfizmKt" />
-      <item index="4" class="java.lang.String" itemvalue="Kotlin.KotlinKalıtım.LateBindingKt" />
-      <item index="5" class="java.lang.String" itemvalue="Kotlin.KotlinAbstract.AbstractKt" />
+      <item index="1" class="java.lang.String" itemvalue="Kotlin.KotlinKoleksiyonlar.Koleksiyon.KoleksiyonKt" />
+      <item index="2" class="java.lang.String" itemvalue="Kotlin.KotlinException.ExceptionKt" />
+      <item index="3" class="java.lang.String" itemvalue="Kotlin.KotlinOzelFonksiyonlar.OperatorOverloadingKt" />
+      <item index="4" class="java.lang.String" itemvalue="Kotlin.KotlinOzelFonksiyonlar.RecusiveKt" />
+      <item index="5" class="java.lang.String" itemvalue="Kotlin.KotlinOzelFonksiyonlar.HighOrderFunKt" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Kotlin.KotlinAbstract.AbstractKt" />
-        <item index="1" class="java.lang.String" itemvalue="Kotlin.KotlinKalıtım.LateBindingKt" />
-        <item index="2" class="java.lang.String" itemvalue="Kotlin.KotlinKalıtım.PolymorfizmKt" />
-        <item index="3" class="java.lang.String" itemvalue="Kotlin.KotlinKalıtım.InsanKt" />
-        <item index="4" class="java.lang.String" itemvalue="Kotlin.KotlinKalıtım.PersonKt" />
+        <item index="0" class="java.lang.String" itemvalue="Kotlin.KotlinOzelFonksiyonlar.HighOrderFunKt" />
+        <item index="1" class="java.lang.String" itemvalue="Kotlin.KotlinOzelFonksiyonlar.RecusiveKt" />
+        <item index="2" class="java.lang.String" itemvalue="Kotlin.KotlinOzelFonksiyonlar.OperatorOverloadingKt" />
+        <item index="3" class="java.lang.String" itemvalue="Kotlin.KotlinException.ExceptionKt" />
+        <item index="4" class="java.lang.String" itemvalue="Kotlin.KotlinKoleksiyonlar.Koleksiyon.KoleksiyonKt" />
       </list>
     </recent_temporary>
   </component>
@@ -397,13 +430,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23613313" sideWeight="0.50732064" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23613313" sideWeight="0.49267936" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23613313" sideWeight="0.49267936" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -412,13 +446,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -428,114 +461,29 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/KotlinOzelFonksiyonlar/Recusive.kt</url>
+          <line>10</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/KotlinOzelFonksiyonlar/HighOrderFun.kt</url>
+          <line>76</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/KotlinAbstract/Abstract.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KotlinKalıtım/LateBinding.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KotlinKalıtım/Person.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KotlinOverloading/Overload.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KotlinBeforeNesne/Metodlar.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="45" column="36" lean-forward="false" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KotlinBeforeNesne/Metodlar.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KotlinDiziler/BolumSonuCanavari.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KotlinDiziler/Diziler.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KotlinKontrolDongu/KontrolDongu.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="84" column="27" lean-forward="false" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -610,13 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/KotlinDiziler/Diziler.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/KotlinDiziler/BolumSonuCanavari.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
@@ -665,7 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -683,14 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/KotlinOOP/Dikdortgen.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -702,7 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,7 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -718,7 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,7 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
           <caret line="32" column="28" lean-forward="false" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,7 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
           <caret line="35" column="92" lean-forward="false" selection-start-line="35" selection-start-column="92" selection-end-line="35" selection-end-column="92" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -742,7 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-360">
           <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -750,7 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -766,7 +691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -774,7 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,14 +705,118 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/KotlinAbstract/Isimsizler.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="61" lean-forward="false" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+        <state relative-caret-position="20">
+          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KotlinDataClass.kt" />
+    <entry file="file://$PROJECT_DIR$/src/KotlinDataClass/DataClass.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="34" column="31" lean-forward="true" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KotlinDataClass/GetterSetterEnum.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KotlinGeneric/Generic.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KotlinGeneric/GenericMetod.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KotlinAbstract/Static.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/collections/Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="92" column="36" lean-forward="false" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-808">
+          <caret line="134" column="17" lean-forward="false" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KotlinKoleksiyonlar/Koleksiyon/Koleksiyon.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1460">
+          <caret line="73" column="28" lean-forward="true" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KotlinException/Exception.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="6" column="63" lean-forward="false" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KotlinOzelFonksiyonlar/OperatorOverloading.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KotlinDiziler/Diziler.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KotlinOzelFonksiyonlar/Recusive.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KotlinOzelFonksiyonlar/HighOrderFun.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="34" column="40" lean-forward="false" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
           <folding />
         </state>
       </provider>
