@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Adinizi Giriniz"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:id="@+id/name"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tamam"
+        android:id="@+id/Tamam"
+        android:layout_below="@+id/name"
+        android:layout_toLeftOf="@+id/Vazgec"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vazgeç"
+        android:id="@+id/Vazgec"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="12dp"
+        android:layout_below="@+id/name"/>
+
+
+</RelativeLayout>
