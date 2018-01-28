@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="tumNotlar">
+        <item>AA</item>
+        <item>BA</item>
+        <item>BB</item>
+        <item>CB</item>
+        <item>CC</item>
+        <item>DC</item>
+        <item>DD</item>
+        <item>FD</item>
+        <item>FF</item>
+    </string-array>
+
+    <string-array name="krediler">
+        <item>1 Kredi</item>
+        <item>2 Kredi</item>
+        <item>3 Kredi</item>
+        <item>4 Kredi</item>
+        <item>5 Kredi</item>
+        <item>6 Kredi</item>
+        <item>7 Kredi</item>
+        <item>8 Kredi</item>
+        <item>9 Kredi</item>
+    </string-array>
+
+
+</resources>
