@@ -17,7 +17,9 @@ class MainActivity : AppCompatActivity() {
     private val DERSLER = arrayOf("Gezgin Robotlara Giriş","Proje Yönetimi ve İş Güvenliği",
             "Yapay Zeka","Programalama Dilleri Prensipleri", "Bilgisayar Ağlarında Güvenlik",
             "Sayısal Video Temelleri","USD")
+
     private var tumDersler = arrayListOf<Dersler>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
