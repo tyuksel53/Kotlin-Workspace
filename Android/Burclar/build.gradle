@@ -14,11 +14,13 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
 allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url "http://dl.bintray.com/glomadrian/maven"
+        }
     }
 }
 

@@ -5,32 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import kotlinx.android.synthetic.main.teksatir.view.*
 
-/**
- * Created by Taha on 30-Jan-18.
- */
-class BurclarBaseAdaptor(context:Context): BaseAdapter() {
+class BurclarBaseAdaptor(context:Context,burcBilgiler:ArrayList<Burc>): BaseAdapter() {
 
-    var tumBurclar:ArrayList<Burclar>
+    var tumBurclar:ArrayList<Burc>
+
     var context: Context
+
     init{
-        tumBurclar = ArrayList(12)
+        tumBurclar = burcBilgiler
         this.context = context
-        var burcAdlar = context.resources.getStringArray(R.array.burclar)
-
-        var burcTarihler = context.resources.getStringArray(R.array.burcTarih)
-
-        val burcResimler = arrayOf(R.drawable.koc1,R.drawable.boga2,R.drawable.ikizler3,R.drawable.yengec4,
-                R.drawable.aslan5,R.drawable.basak6,R.drawable.terazi7,R.drawable.akrep8,R.drawable.yay9,
-                R.drawable.oglak10,R.drawable.kova11,R.drawable.balik12)
-
-        for(i in 0 .. 11)
-        {
-            var tmp = Burclar(burcAdlar[i],burcTarihler[i],burcResimler[i])
-            tumBurclar.add(tmp)
-        }
     }
+
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
 
         var tek_satir_view = convertView
@@ -48,11 +34,11 @@ class BurclarBaseAdaptor(context:Context): BaseAdapter() {
         }
 
 
-        var currentItem = getItem(position) as Burclar
+        var currentItem = getItem(position) as Burc
 
-        holder.burcImageView.setImageResource(currentItem.imgBurc)
+        holder.burcImageView.setImageResource(currentItem.burcResmi)
         holder.burcAd.text = currentItem.burcAdi
-        holder.burcTarih.text = currentItem.burcTarih
+        holder.burcTarih.text = currentItem.burcTarihi
 
 
         return tek_satir_view!!
@@ -69,10 +55,5 @@ class BurclarBaseAdaptor(context:Context): BaseAdapter() {
     override fun getCount(): Int {
         return tumBurclar.size
     }
-
-}
-
-data class Burclar(var burcAdi:String,var burcTarih:String,var imgBurc:Int)
-{
 
 }
