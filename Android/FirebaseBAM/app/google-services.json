@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "925402604585",
+    "firebase_url": "https://fir-kotlin-9c54c.firebaseio.com",
+    "project_id": "fir-kotlin-9c54c",
+    "storage_bucket": "fir-kotlin-9c54c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925402604585:android:dd3f4dd6f8bb2b52",
+        "android_client_info": {
+          "package_name": "com.example.taha.firebasebam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "925402604585-rhti6ie32rvg80n62t4kcvvhssj4qngf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARtlRmV03ybSs_N0l7MpfrDf5ScscKMH8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
