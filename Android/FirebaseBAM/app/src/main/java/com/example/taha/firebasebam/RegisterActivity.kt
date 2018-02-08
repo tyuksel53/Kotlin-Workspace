@@ -4,20 +4,19 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_register.*
 import java.util.regex.Pattern
 
 class RegisterActivity : AppCompatActivity() {
 
+    var zundi = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
         btnKayitOl.setOnClickListener {
-
+            btnKayitOl.isEnabled = false
             if(edEmail.text.isNotEmpty() && edPassword.text.isNotEmpty() && edPasswordConfirm.text.isNotEmpty())
             {
                 var emailPattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE)
@@ -41,7 +40,7 @@ class RegisterActivity : AppCompatActivity() {
             {
                 Toast.makeText(this,"Lütfen Bütün alanları doldurun",Toast.LENGTH_LONG).show()
             }
-
+            btnKayitOl.isEnabled = true
         }
 
 
