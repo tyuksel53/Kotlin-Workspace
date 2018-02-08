@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         tvEposta.text = currentUser?.email.toString()
         tvUid.text = currentUser?.uid
-        tvKullaniciAdi.text = "Tanımlanmadı"
+        tvKullaniciAdi.text = currentUser?.displayName.toString()
 
     }
 

@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 class SifremiUnuttumDialogFragment : DialogFragment() {
 
     lateinit var mContext:FragmentActivity
-    lateinit var emil:EditText
+    lateinit var edEmail:EditText
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -24,7 +24,7 @@ class SifremiUnuttumDialogFragment : DialogFragment() {
         val view =  inflater!!.inflate(R.layout.fragment_sifremi_unuttum_dialog, container, false)
         val btnIptal = view.findViewById<Button>(R.id.btnSifreTekrarIptal)
         val btnSifreGonder = view.findViewById<Button>(R.id.btnSifreTekrarGonder)
-        val edEmail = view.findViewById<EditText>(R.id.edSifreTekrarGonder)
+        edEmail = view.findViewById<EditText>(R.id.edSifreTekrarGonder)
         btnSifreGonder.setOnClickListener {
             if( edEmail.text.toString().isNotEmpty() )
             {
