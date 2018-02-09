@@ -15,14 +15,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         initMyAuthListener()
 
-        var currentUser = FirebaseAuth.getInstance().currentUser
+    }
 
+    private fun kullaniciBilgileriniGoser() {
+        var currentUser = FirebaseAuth.getInstance().currentUser
         tvEposta.text = currentUser?.email.toString()
         tvUid.text = currentUser?.uid
         tvKullaniciAdi.text = currentUser?.displayName.toString()
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -67,6 +69,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
+        kullaniciBilgileriniGoser()
         var user = FirebaseAuth.getInstance().currentUser
         if(user == null)
         {
