@@ -1,10 +1,16 @@
 package com.example.taha.firebasebam
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.net.Uri
 import android.opengl.Visibility
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.EmailAuthProvider
@@ -13,7 +19,19 @@ import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_kullanici_detay.*
 
-class KullaniciDetayActivity : AppCompatActivity() {
+class KullaniciDetayActivity : AppCompatActivity() , ProfilResimFragment.onProfilResimListener {
+
+
+    var isPermissionGived = false
+
+
+    override fun getResimYol(resimPath: Uri?) {
+
+    }
+
+    override fun resimBitmap(bitmap: Bitmap?) {
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -137,9 +155,51 @@ class KullaniciDetayActivity : AppCompatActivity() {
         }
 
         ivUpdateResim.setOnClickListener {
-            var fragment = ProfilResimFragment()
-            fragment.show(supportFragmentManager,"fotoseç")
+
+            if(isPermissionGived)
+            {
+                var fragment = ProfilResimFragment()
+                fragment.show(supportFragmentManager,"fotoseç")
+            }else
+            {
+                izinleriIste()
+            }
+
         }
+    }
+
+    private fun izinleriIste() {
+
+        var izinler = arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE
+        ,android.Manifest.permission.WRITE_EXTERNAL_STORAGE,android.Manifest.permission.CAMERA)
+
+        if(ContextCompat.checkSelfPermission(this,izinler[0]) == PackageManager.PERMISSION_GRANTED
+            && ContextCompat.checkSelfPermission(this,izinler[1]) == PackageManager.PERMISSION_GRANTED
+            && ContextCompat.checkSelfPermission(this,izinler[2]) == PackageManager.PERMISSION_GRANTED)
+        {
+            isPermissionGived = true
+        }else
+        {
+            ActivityCompat.requestPermissions(this,izinler,150)
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+
+        if(requestCode == 150)
+        {
+            if(grantResults[0] == PackageManager.PERMISSION_GRANTED
+                && grantResults[1] == PackageManager.PERMISSION_GRANTED
+                && grantResults[2] == PackageManager.PERMISSION_GRANTED)
+            {
+                var fragment = ProfilResimFragment()
+                fragment.show(supportFragmentManager,"fotoseç")
+            }else
+            {
+                Toast.makeText(this,"Tüm izinleri ver lan",Toast.LENGTH_LONG).show()
+            }
+        }
+
     }
 
     private fun mailGuncelle() {
