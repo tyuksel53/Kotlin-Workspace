@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_kullanici_detay.*
 
 class KullaniciDetayActivity : AppCompatActivity() {
@@ -19,11 +20,34 @@ class KullaniciDetayActivity : AppCompatActivity() {
         setContentView(R.layout.activity_kullanici_detay)
 
         var currentUser = FirebaseAuth.getInstance().currentUser!!
-
+        var db = FirebaseDatabase.getInstance().reference
         edUpdateCurrentPass.setText("")
-        edUpdateKullaniciAdi.setText(currentUser.displayName.toString())
+        db.child("kullanici").child(currentUser.uid).child("isim")
+                .addValueEventListener(object:ValueEventListener{
+                    override fun onCancelled(p0: DatabaseError?) {
 
-        btnUpdateSifre.setOnClickListener {
+                    }
+
+                    override fun onDataChange(p0: DataSnapshot?) {
+                        edUpdateKullaniciAdi.setText(p0?.value.toString())
+                    }
+
+                })
+        db.child("kullanici").child(currentUser.uid).child("telefon")
+                .addValueEventListener(object:ValueEventListener{
+                    override fun onCancelled(p0: DatabaseError?) {
+
+                    }
+
+                    override fun onDataChange(p0: DataSnapshot?) {
+                        edUpdatePhone.setText(p0?.value.toString())
+                    }
+
+                })
+
+        tvUpdateMail.text = currentUser.email.toString()
+
+        tvUpdateForgetPass.setOnClickListener {
 
             if(currentUser != null)
             {
@@ -45,25 +69,31 @@ class KullaniciDetayActivity : AppCompatActivity() {
 
         btnUpdateSaveChanges.setOnClickListener {
 
-            if(edUpdateKullaniciAdi.text.isNotEmpty())
+            if(edUpdateKullaniciAdi.text.isNotEmpty() && edUpdatePhone.text.isNotEmpty())
             {
-                if(edUpdateKullaniciAdi.text.toString() != currentUser?.displayName.toString())
-                {
-                    var bilgileriGuncelle = UserProfileChangeRequest.Builder()
-                            .setDisplayName(edUpdateKullaniciAdi.text.toString())
-                            .build()
+                var bilgileriGuncelle = UserProfileChangeRequest.Builder()
+                        .setDisplayName(edUpdateKullaniciAdi.text.toString())
+                        .build()
 
-                    currentUser.updateProfile(bilgileriGuncelle)
-                            .addOnCompleteListener {
-                                if(it.isSuccessful)
-                                {
-                                    Toast.makeText(this@KullaniciDetayActivity,"Bilgiler Güncellendi",Toast.LENGTH_LONG).show()
-                                }else
-                                {
-                                    Toast.makeText(this@KullaniciDetayActivity,"Sıçtı",Toast.LENGTH_LONG).show()
-                                }
+                currentUser.updateProfile(bilgileriGuncelle)
+                        .addOnCompleteListener {
+                            if(it.isSuccessful)
+                            {
+                                Toast.makeText(this@KullaniciDetayActivity,"Bilgiler Güncellendi",Toast.LENGTH_LONG).show()
+                                FirebaseDatabase.getInstance().reference
+                                        .child("kullanici")
+                                        .child(currentUser.uid.toString())
+                                        .child("isim").setValue(edUpdateKullaniciAdi.text.toString())
+
+                                FirebaseDatabase.getInstance().reference
+                                        .child("kullanici")
+                                        .child(currentUser.uid)
+                                        .child("telefon").setValue(edUpdatePhone.text.toString())
+                            }else
+                            {
+                                Toast.makeText(this@KullaniciDetayActivity,"Sıçtı",Toast.LENGTH_LONG).show()
                             }
-                }
+                        }
 
             }else
             {
@@ -72,7 +102,7 @@ class KullaniciDetayActivity : AppCompatActivity() {
 
         }
 
-        btnUpdateMailAndPassword.setOnClickListener {
+        tvUpdatePassAndMail.setOnClickListener {
 
             if(edUpdateCurrentPass.text.isNotEmpty())
             {
@@ -104,6 +134,11 @@ class KullaniciDetayActivity : AppCompatActivity() {
                 Toast.makeText(this,"Şuanki şifreni girin",Toast.LENGTH_LONG).show()
             }
 
+        }
+
+        ivUpdateResim.setOnClickListener {
+            var fragment = ProfilResimFragment()
+            fragment.show(supportFragmentManager,"fotoseç")
         }
     }
 

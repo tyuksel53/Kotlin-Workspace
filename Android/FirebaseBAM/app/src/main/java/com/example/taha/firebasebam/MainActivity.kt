@@ -3,9 +3,15 @@ package com.example.taha.firebasebam
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_kullanici_detay.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,9 +27,51 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun kullaniciBilgileriniGoser() {
-        var currentUser = FirebaseAuth.getInstance().currentUser
+        var currentUser = FirebaseAuth.getInstance().currentUser!!
         tvEposta.text = currentUser?.email.toString()
         tvUid.text = currentUser?.uid
+        var db = FirebaseDatabase.getInstance().reference
+
+        var query = db.child("kullanici").orderByKey().equalTo(currentUser.uid)
+                .addListenerForSingleValueEvent(object:ValueEventListener{
+
+                    override fun onDataChange(p0: DataSnapshot?) {
+
+                        for(zincir in p0!!.children)
+                        {
+                            val mundi = zincir.getValue(Kullanici::class.java)
+                            val zundi = mundi
+                            Log.e("zundi","${zundi?.isim} ${zundi?.telefon} ${zundi?.kullanici_Id} ${zundi?.seviye} ")
+                        }
+
+
+                    }
+                    override fun onCancelled(p0: DatabaseError?) {
+
+                    }
+
+                })
+
+        var query2 = db.child("kullanici").child(currentUser.uid).orderByValue()
+                .addListenerForSingleValueEvent(object:ValueEventListener{
+
+                    override fun onDataChange(p0: DataSnapshot?) {
+
+                        for(zincir in p0!!.children)
+                        {
+                           /* val mundi = zincir.getValue(Kullanici::class.java)
+                            val zundi = mundi*/
+                            Log.e("Kundi","${zincir.value.toString()}")
+                        }
+
+
+                    }
+                    override fun onCancelled(p0: DatabaseError?) {
+
+                    }
+
+                })
+
         tvKullaniciAdi.text = currentUser?.displayName.toString()
     }
 

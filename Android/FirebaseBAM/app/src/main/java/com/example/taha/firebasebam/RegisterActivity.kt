@@ -100,7 +100,7 @@ class RegisterActivity : AppCompatActivity() {
         yeniKullanici.isim = edEmail.text.toString().substring(0,edEmail.text.toString().indexOf("@"))
         yeniKullanici.kullanici_Id = FirebaseAuth.getInstance()?.uid
         yeniKullanici.profil_resim = ""
-        yeniKullanici.telefon = 123
+        yeniKullanici.telefon = "123"
         yeniKullanici.seviye = 1
 
         FirebaseDatabase.getInstance().reference
@@ -117,4 +117,5 @@ class RegisterActivity : AppCompatActivity() {
                     }
                 }
     }
+
 }

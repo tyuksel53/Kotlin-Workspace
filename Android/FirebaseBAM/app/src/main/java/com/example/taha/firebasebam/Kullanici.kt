@@ -6,12 +6,12 @@ package com.example.taha.firebasebam
 class Kullanici{
 
     var isim:String? = null
-    var telefon:Long? = null
+    var kullanici_Id:String? = null
     var profil_resim:String? = null
     var seviye:Int? = null
-    var kullanici_Id:String? = null
+    var telefon:String? = null
 
-    constructor(isim:String,telefon:Long,profil_resim:String,seviye:Int,kullanici_Id:String)
+    constructor(isim:String,profil_resim:String,kullanici_Id:String,seviye:Int,telefon:String)
     {
         this.isim = isim
         this.kullanici_Id = kullanici_Id
