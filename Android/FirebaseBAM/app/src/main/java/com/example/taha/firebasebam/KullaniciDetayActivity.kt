@@ -7,29 +7,147 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
 import android.opengl.Visibility
+import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
+import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.UploadTask
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_kullanici_detay.*
+import java.io.ByteArrayInputStream
+import java.io.ByteArrayOutputStream
 
 class KullaniciDetayActivity : AppCompatActivity() , ProfilResimFragment.onProfilResimListener {
 
 
+    var galeridenGelenUri:Uri? = null
+    var kameradanGelenBitmap:Bitmap? = null
     var isPermissionGived = false
 
 
     override fun getResimYol(resimPath: Uri?) {
-
+        galeridenGelenUri = resimPath
+        Picasso.with(this).load(galeridenGelenUri).into(ivUpdateResim)
     }
 
     override fun resimBitmap(bitmap: Bitmap?) {
+        ivUpdateResim.setImageBitmap(bitmap)
+    }
+
+
+    private fun fotografCompress(gelenUri:Uri?) {
+
+        var compress = BackgroundImgCompress()
+        compress.execute(gelenUri)
+
+    }
+
+    private fun fotografCompress(gelenBitmap:Bitmap?)
+    {
+        var compress = BackgroundImgCompress(gelenBitmap)
+        var uri:Uri? = null
+        compress.execute(null)
+    }
+
+    inner class BackgroundImgCompress:AsyncTask<Uri,Double,ByteArray?>
+    {
+
+        var myBitmap:Bitmap? = null
+
+        constructor()
+
+        constructor(kameradanGelenBitmap:Bitmap?)
+        {
+            this.myBitmap = kameradanGelenBitmap
+        }
+
+        override fun doInBackground(vararg params: Uri?): ByteArray? {
+
+            if(myBitmap == null) /* galeriden resim seçilmekte */
+            {
+                myBitmap = MediaStore.Images.Media
+                        .getBitmap(this@KullaniciDetayActivity.contentResolver,params[0])
+              /*  Log.e("MUNDI","OrjinalResim Boyutu: ${myBitmap!!.byteCount.toDouble() / 1000000.toDouble() }")*/
+            }
+
+            var resimBytes:ByteArray? = null
+
+            for(i in 1..5)
+            {
+                resimBytes = convertBitmapToByte(100/i,myBitmap)
+                publishProgress(resimBytes!!.size.toDouble())
+            }
+
+            return resimBytes
+        }
+
+        private fun convertBitmapToByte(i: Int,bitmap:Bitmap?): ByteArray? {
+
+            var stream = ByteArrayOutputStream()
+            myBitmap?.compress(Bitmap.CompressFormat.JPEG,i,stream)
+            return stream.toByteArray()
+        }
+
+        override fun onPreExecute() {
+            super.onPreExecute()
+
+        }
+
+        override fun onPostExecute(result: ByteArray?) {
+            super.onPostExecute(result)
+            uploadResimToFirebase(result)
+
+        }
+
+
+        override fun onProgressUpdate(vararg values: Double?) {
+            super.onProgressUpdate(*values)
+
+            /*Toast.makeText(this@KullaniciDetayActivity,"Suanki Byte:${values[0]!! / 1000000}",Toast.LENGTH_LONG).show()*/
+
+        }
+
+    }
+
+    private fun uploadResimToFirebase(result: ByteArray?) {
+
+        pbSaveChanges.visibility  = View.VISIBLE
+        var reffence = FirebaseStorage.getInstance().reference
+
+        var yuklenecek_yer = reffence?.child("images/users/${FirebaseAuth.getInstance().currentUser?.uid}/profil_resim")
+
+        var uploadGorevi = yuklenecek_yer.putBytes(result!!)
+
+        uploadGorevi.addOnSuccessListener(object: OnSuccessListener<UploadTask.TaskSnapshot>{
+            override fun onSuccess(p0: UploadTask.TaskSnapshot?) {
+                var yol = p0?.downloadUrl
+                Toast.makeText(this@KullaniciDetayActivity,"Yol: $yol",Toast.LENGTH_LONG).show()
+
+                var ref = FirebaseDatabase.getInstance().reference
+                var veri = ref.child("kullanici")
+                        .child(FirebaseAuth.getInstance().currentUser?.uid)
+                        .child("profil_resim").setValue(yol.toString())
+                        .addOnCompleteListener {
+
+                            pbSaveChanges.visibility = View.INVISIBLE
+                        }
+
+            }
+
+        })
 
     }
 
@@ -40,25 +158,23 @@ class KullaniciDetayActivity : AppCompatActivity() , ProfilResimFragment.onProfi
         var currentUser = FirebaseAuth.getInstance().currentUser!!
         var db = FirebaseDatabase.getInstance().reference
         edUpdateCurrentPass.setText("")
-        db.child("kullanici").child(currentUser.uid).child("isim")
-                .addValueEventListener(object:ValueEventListener{
+
+        db.child("kullanici").orderByKey().equalTo(currentUser.uid)
+                .addValueEventListener(object :ValueEventListener{
                     override fun onCancelled(p0: DatabaseError?) {
 
                     }
-
                     override fun onDataChange(p0: DataSnapshot?) {
-                        edUpdateKullaniciAdi.setText(p0?.value.toString())
-                    }
 
-                })
-        db.child("kullanici").child(currentUser.uid).child("telefon")
-                .addValueEventListener(object:ValueEventListener{
-                    override fun onCancelled(p0: DatabaseError?) {
+                        for(singleSnapshot in p0!!.children)
+                        {
+                            var kullanici = singleSnapshot.getValue(Kullanici::class.java)
+                            edUpdateKullaniciAdi.setText(kullanici?.isim.toString())
+                            edUpdatePhone.setText(kullanici?.telefon.toString())
+                            Picasso.with(this@KullaniciDetayActivity)
+                                    .load(kullanici?.profil_resim).into(ivUpdateResim)
 
-                    }
-
-                    override fun onDataChange(p0: DataSnapshot?) {
-                        edUpdatePhone.setText(p0?.value.toString())
+                        }
                     }
 
                 })
@@ -117,6 +233,16 @@ class KullaniciDetayActivity : AppCompatActivity() , ProfilResimFragment.onProfi
             {
                 Toast.makeText(this@KullaniciDetayActivity,"WOWOWOWOWWO bütün alanları doldur",Toast.LENGTH_LONG).show()
             }
+
+
+            if(galeridenGelenUri != null)
+            {
+                fotografCompress(galeridenGelenUri)
+            }else if(kameradanGelenBitmap != null)
+            {
+                fotografCompress(kameradanGelenBitmap)
+            }
+
 
         }
 

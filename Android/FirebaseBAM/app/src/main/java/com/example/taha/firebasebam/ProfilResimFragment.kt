@@ -64,7 +64,7 @@ class ProfilResimFragment : DialogFragment() {
 
 
         //galeriden
-        if(requestCode == 100 && requestCode == Activity.RESULT_OK && data != null)
+        if(requestCode == 100 && resultCode == Activity.RESULT_OK && data != null)
         {
             var resim = data.data
             Log.e("zundi","$resim")
@@ -72,7 +72,7 @@ class ProfilResimFragment : DialogFragment() {
             dismiss()
 
         } // kameradan
-        else if(requestCode == 200 && requestCode == Activity.RESULT_OK && data != null)
+        else if(requestCode == 200 && resultCode == Activity.RESULT_OK && data != null)
         {
             var resim:Bitmap
             resim = data.extras.get("data") as Bitmap
