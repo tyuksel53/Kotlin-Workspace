@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.example.taha.firebasebam.Dialogs.OnayMailDialog
+import com.example.taha.firebasebam.Dialogs.SifremiUnuttumDialogFragment
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 

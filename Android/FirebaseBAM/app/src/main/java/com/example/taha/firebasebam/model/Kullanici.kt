@@ -1,4 +1,4 @@
-package com.example.taha.firebasebam
+package com.example.taha.firebasebam.model
 
 /**
  * Created by Taha on 09-Feb-18.

@@ -6,12 +6,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import com.example.taha.firebasebam.model.Kullanici
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_kullanici_detay.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -89,6 +89,10 @@ class MainActivity : AppCompatActivity() {
             R.id.menuCikisYap -> cikisYap()
             R.id.menuHesapBilgileri -> {
                 var intent = Intent(this@MainActivity,KullaniciDetayActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.menuSohbet -> {
+                var intent = Intent(this@MainActivity,SohbetActivity::class.java)
                 startActivity(intent)
             }
         }

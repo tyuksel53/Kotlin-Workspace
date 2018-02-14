@@ -1,4 +1,4 @@
-package com.example.taha.firebasebam
+package com.example.taha.firebasebam.Dialogs
 
 
 import android.app.Activity
@@ -15,6 +15,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.taha.firebasebam.R
 
 
 /**
@@ -29,7 +30,7 @@ class ProfilResimFragment : DialogFragment() {
 
     }
 
-    lateinit var myProfilResimListener:onProfilResimListener
+    lateinit var myProfilResimListener: onProfilResimListener
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

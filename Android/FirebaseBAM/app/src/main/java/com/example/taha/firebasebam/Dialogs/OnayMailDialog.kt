@@ -1,4 +1,4 @@
-package com.example.taha.firebasebam
+package com.example.taha.firebasebam.Dialogs
 
 
 import android.os.Bundle
@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.taha.firebasebam.R
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 

@@ -2,4 +2,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/menuCikisYap" android:title="Çıkış Yap" ></item>
     <item android:title="Hesap Bilgileri" android:id="@+id/menuHesapBilgileri"></item>
+    <item android:id="@+id/menuSohbet" android:title="Sohbetler"></item>
 </menu>
