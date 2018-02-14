@@ -1,6 +1,7 @@
 package com.example.taha.firebasebam
 
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.view.LayoutInflater
@@ -8,12 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.example.taha.firebasebam.model.Kullanici
+import com.example.taha.firebasebam.model.SohbetMesajlar
 import com.example.taha.firebasebam.model.SohbetOdası
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.text.SimpleDateFormat
+import java.util.*
 
 class YeniSohbetFragment : DialogFragment() {
 
@@ -23,18 +27,19 @@ class YeniSohbetFragment : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        var view =  inflater!!.inflate(R.layout.fragment_yeni_sohbet, container, false)
+        val view =  inflater!!.inflate(R.layout.fragment_yeni_sohbet, container, false)
 
-        var btnSohbetOlustur = view.findViewById<Button>(R.id.btnSohbetOlustur)
-        var edSohbetAdi = view.findViewById<EditText>(R.id.edSohbetAdi)
-        var seviye = view.findViewById<SeekBar>(R.id.seekBarSeviye)
-        var tvCurrentSeviye = view.findViewById<TextView>(R.id.tvSohbetSeviye)
+        val btnSohbetOlustur = view.findViewById<Button>(R.id.btnSohbetOlustur)
+        val edSohbetAdi = view.findViewById<EditText>(R.id.edSohbetAdi)
+        val seviye = view.findViewById<SeekBar>(R.id.seekBarSeviye)
+        val tvCurrentSeviye = view.findViewById<TextView>(R.id.tvSohbetSeviye)
 
         kullaniciSeviyeGetir()
 
 
 
         seviye.setOnSeekBarChangeListener(object:SeekBar.OnSeekBarChangeListener{
+            @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 mySeekProgress = progress
                 tvCurrentSeviye.text = "Şuanki Seviye: $mySeekProgress"
@@ -56,11 +61,11 @@ class YeniSohbetFragment : DialogFragment() {
             {
                 if(userLevel >= seviye.progress)
                 {
-                    var ref = FirebaseDatabase.getInstance().reference
+                    val ref = FirebaseDatabase.getInstance().reference
 
-                    var sohbetOdasiId = ref.child("sohbetOdalari").push().key
+                    val sohbetOdasiId = ref.child("sohbetOdalari").push().key
 
-                    var yeniSohbetOdasi = SohbetOdası()
+                    val yeniSohbetOdasi = SohbetOdası()
 
                     yeniSohbetOdasi.olusturanAdi = FirebaseAuth.getInstance().currentUser?.uid
                     yeniSohbetOdasi.seviye = seviye.progress.toString()
@@ -68,7 +73,20 @@ class YeniSohbetFragment : DialogFragment() {
                     yeniSohbetOdasi.sohbetOdasi_Id = sohbetOdasiId
 
                     ref.child("sohbetOdalari").child(sohbetOdasiId).setValue(yeniSohbetOdasi)
+
+                    var hosgeldinMesaj = SohbetMesajlar()
+                    val mesajId = ref.child("sohbetOdalari").push().key
+
+                    hosgeldinMesaj.mesaj = "Sohbet Odasına Hoş Geldiniz"
+                    hosgeldinMesaj.timestamp = getDate()
+
+                    ref.child("sohbetOdalari").child(sohbetOdasiId).child("sohbetOdasiMesajlari")
+                            .child(mesajId).setValue(hosgeldinMesaj)
+
                     Toast.makeText(activity,"Sohbet Odasi Kaydedildi",Toast.LENGTH_LONG).show()
+
+                    (activity as SohbetActivity).init()
+
                     dialog.dismiss()
 
 
@@ -92,9 +110,9 @@ class YeniSohbetFragment : DialogFragment() {
     fun kullaniciSeviyeGetir()
     {
 
-        var currentUser = FirebaseAuth.getInstance().currentUser
+        val currentUser = FirebaseAuth.getInstance().currentUser
 
-        var refrance = FirebaseDatabase.getInstance().reference
+        val refrance = FirebaseDatabase.getInstance().reference
 
         var seviye: Kullanici? = null
 
@@ -115,6 +133,12 @@ class YeniSohbetFragment : DialogFragment() {
                     }
 
                 })
+    }
+
+    fun getDate():String
+    {
+        var format = SimpleDateFormat("yyyy-MM-dd HH-mm-ss", Locale("tr"))
+        return format.format(Date())
     }
 
 }
