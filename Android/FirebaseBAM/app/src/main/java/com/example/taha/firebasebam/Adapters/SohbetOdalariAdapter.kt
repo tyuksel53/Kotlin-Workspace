@@ -67,7 +67,7 @@ class SohbetOdalariAdapter(var myContext:AppCompatActivity,var sohbetOdalari:Arr
             item.setOnClickListener {
 
                 var intent = Intent(myContext,SohbetOdasiActivity::class.java)
-                intent.putExtra("sohbetOdasiId",currentRoom)
+                intent.putExtra("sohbetOdasiId",currentRoom.sohbetOdasi_Id)
                 myContext.startActivity(intent)
 
             }
