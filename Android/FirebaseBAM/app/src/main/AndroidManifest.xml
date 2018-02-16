@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".KullaniciDetayActivity" />
-        <activity android:name=".SohbetActivity"></activity>
+        <activity android:name=".SohbetActivity" />
+        <activity android:name=".SohbetOdasiActivity"></activity>
     </application>
 
 </manifest>

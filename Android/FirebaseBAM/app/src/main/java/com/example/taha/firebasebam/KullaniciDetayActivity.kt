@@ -167,9 +167,11 @@ class KullaniciDetayActivity : AppCompatActivity() , ProfilResimFragment.onProfi
                             var kullanici = singleSnapshot.getValue(Kullanici::class.java)
                             edUpdateKullaniciAdi.setText(kullanici?.isim.toString())
                             edUpdatePhone.setText(kullanici?.telefon.toString())
-                            Picasso.with(this@KullaniciDetayActivity)
-                                    .load(kullanici?.profil_resim).into(ivUpdateResim)
-
+                            if(kullanici?.profil_resim != "")
+                            {
+                                Picasso.with(this@KullaniciDetayActivity)
+                                        .load(kullanici?.profil_resim).into(ivUpdateResim)
+                            }
                         }
                     }
 

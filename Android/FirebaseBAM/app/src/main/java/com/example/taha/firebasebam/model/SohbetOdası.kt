@@ -1,6 +1,8 @@
 package com.example.taha.firebasebam.model
 
-class SohbetOdası {
+import java.io.Serializable
+
+class SohbetOdası:Serializable {
 
     var sohbetOdasiAdi: String? = null
     var olusturanAdi: String? = null

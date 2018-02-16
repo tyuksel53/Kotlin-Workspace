@@ -94,10 +94,20 @@ class SohbetActivity : AppCompatActivity() {
 
     fun tumOdalariGetir()
     {
-        var myAdapter = SohbetOdalariAdapter(tumSohbetOdalari!!)
+        var myAdapter = SohbetOdalariAdapter(this@SohbetActivity,tumSohbetOdalari!!)
 
         recyclerViewSohbet.adapter = myAdapter
         recyclerViewSohbet.layoutManager = LinearLayoutManager(this@SohbetActivity,LinearLayout.VERTICAL ,false)
+
+    }
+
+    fun sohbetOdasiSil(sohbetOdasiId:String)
+    {
+        var ref = FirebaseDatabase.getInstance().reference
+
+        ref.child("sohbetOdalari").child(sohbetOdasiId).removeValue()
+        Toast.makeText(this@SohbetActivity,"Sohbet odasi silindi",Toast.LENGTH_LONG).show()
+        init()
 
     }
 

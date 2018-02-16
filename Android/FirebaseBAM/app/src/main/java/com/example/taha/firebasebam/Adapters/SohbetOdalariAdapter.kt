@@ -1,5 +1,9 @@
 package com.example.taha.firebasebam.Adapters
 
+import android.content.DialogInterface
+import android.content.Intent
+import android.support.v7.app.AlertDialog
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -7,6 +11,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.taha.firebasebam.R
+import com.example.taha.firebasebam.SohbetActivity
+import com.example.taha.firebasebam.SohbetOdasiActivity
 import com.example.taha.firebasebam.model.Kullanici
 import com.example.taha.firebasebam.model.SohbetOdası
 import com.google.firebase.auth.FirebaseAuth
@@ -20,7 +26,8 @@ import kotlinx.android.synthetic.main.singlelinechatroom.view.*
 /**
  * Created by Taha on 14-Feb-18.
  */
-class SohbetOdalariAdapter(var sohbetOdalari:ArrayList<SohbetOdası>): RecyclerView.Adapter<SohbetOdalariAdapter.SohbetOdasiViewHolder>() {
+class SohbetOdalariAdapter(var myContext:AppCompatActivity,var sohbetOdalari:ArrayList<SohbetOdası>): RecyclerView.Adapter<SohbetOdalariAdapter.SohbetOdasiViewHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): SohbetOdasiViewHolder {
 
@@ -56,6 +63,16 @@ class SohbetOdalariAdapter(var sohbetOdalari:ArrayList<SohbetOdası>): RecyclerV
 
         fun setData(position:Int,currentRoom:SohbetOdası)
         {
+
+            item.setOnClickListener {
+
+                var intent = Intent(myContext,SohbetOdasiActivity::class.java)
+                intent.putExtra("sohbetOdasiId",currentRoom)
+                myContext.startActivity(intent)
+
+            }
+
+
             var ref = FirebaseDatabase.getInstance().reference
 
             var getUser = ref.child("kullanici").orderByKey().equalTo(currentRoom.olusturanAdi)
@@ -68,14 +85,18 @@ class SohbetOdalariAdapter(var sohbetOdalari:ArrayList<SohbetOdası>): RecyclerV
                             for(singleSnapShot in p0!!.children)
                             {
                                 var user = singleSnapShot.getValue(Kullanici::class.java)
-                                Picasso.with(itemView.context).load(user?.profil_resim).into(ownerImage)
-                                ownerName.text = user?.isim
+                                if(user?.profil_resim != "")
+                                {
+                                    Picasso.with(itemView.context).load(user?.profil_resim).into(ownerImage)
+                                    chatRoomName.text  = user?.isim
+                                }
+
                             }
                         }
 
                     })
             chatRoomMessageCount.text = "Toplam mesaj sayisi: ${currentRoom.sohbetOdasiMesajlari?.size}"
-            chatRoomName.text = currentRoom.sohbetOdasiAdi.toString()
+            ownerName.text = currentRoom.sohbetOdasiAdi.toString()
 
             if(currentRoom.olusturanAdi == FirebaseAuth.getInstance().currentUser?.uid)
             {
@@ -83,11 +104,38 @@ class SohbetOdalariAdapter(var sohbetOdalari:ArrayList<SohbetOdası>): RecyclerV
             }
 
             chatRoomDestroy.setOnClickListener {
-                sohbetOdalari.removeAt(position)
-                FirebaseDatabase.getInstance().reference.child("sohbetOdalari")
-                        .child(currentRoom.sohbetOdasi_Id).removeValue()
-                notifyItemRemoved(position)
-                notifyItemRangeChanged(0,sohbetOdalari.size)
+
+                var dialog = AlertDialog.Builder(itemView.context)
+                dialog.setTitle("Emin Misiniz ?")
+                dialog.setMessage("Sohbet Odasi Silinecek")
+                dialog.setCancelable(true)
+                dialog.setPositiveButton("Evet",object:DialogInterface.OnClickListener{
+                    override fun onClick(dialog: DialogInterface?, which: Int) {
+
+                        (myContext as SohbetActivity).sohbetOdasiSil(currentRoom.sohbetOdasi_Id.toString())
+
+
+                        /*sohbetOdalari.removeAt(position)
+                        FirebaseDatabase.getInstance().reference.child("sohbetOdalari")
+                                .child(currentRoom.sohbetOdasi_Id).removeValue()
+
+                        notifyItemRemoved(position)
+                        notifyItemRangeChanged(0,sohbetOdalari.size)*/
+                    }
+
+                })
+
+                dialog.setNegativeButton("Hayır",object:DialogInterface.OnClickListener{
+                    override fun onClick(dialog: DialogInterface?, which: Int) {
+                        dialog?.dismiss()
+                    }
+
+                })
+                dialog.show()
+
+
+
+
             }
         }
 
