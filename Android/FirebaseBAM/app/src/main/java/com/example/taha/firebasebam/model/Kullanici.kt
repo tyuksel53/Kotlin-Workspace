@@ -10,6 +10,7 @@ class Kullanici{
     var profil_resim:String? = null
     var seviye:Int? = null
     var telefon:String? = null
+    var mesaj_token:String? = null
 
     constructor(isim:String,profil_resim:String,kullanici_Id:String,seviye:Int,telefon:String)
     {

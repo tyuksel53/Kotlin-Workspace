@@ -66,6 +66,8 @@ class SohbetOdalariAdapter(var myContext:AppCompatActivity,var sohbetOdalari:Arr
 
             item.setOnClickListener {
 
+                addUsertoChatRoom(currentRoom)
+
                 var intent = Intent(myContext,SohbetOdasiActivity::class.java)
                 intent.putExtra("sohbetOdasiId",currentRoom.sohbetOdasi_Id)
                 myContext.startActivity(intent)
@@ -137,6 +139,18 @@ class SohbetOdalariAdapter(var myContext:AppCompatActivity,var sohbetOdalari:Arr
 
 
             }
+        }
+
+        private fun addUsertoChatRoom(currentRoom:SohbetOdası) {
+
+            var ref = FirebaseDatabase.getInstance().reference
+                    .child("sohbetOdalari")
+                    .child(currentRoom.sohbetOdasi_Id)
+                    .child("currentUsersIn_TheRoom")
+                    .child(FirebaseAuth.getInstance().uid)
+                    .child("okunanMesajSayisi")
+                    .setValue(currentRoom.sohbetOdasiMesajlari?.size.toString())
+
         }
 
     }
