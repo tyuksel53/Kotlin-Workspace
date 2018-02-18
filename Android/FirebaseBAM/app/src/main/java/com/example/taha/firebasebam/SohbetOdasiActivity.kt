@@ -42,7 +42,6 @@ class SohbetOdasiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sohbet_odasi)
-
         startAuthListener()
         mesajlariGetir()
         server_key_get()
@@ -153,10 +152,12 @@ class SohbetOdasiActivity : AppCompatActivity() {
                                                         istek.enqueue(object:Callback<Response<FCMModel>>{
                                                             override fun onFailure(call: Call<Response<FCMModel>>?, t: Throwable?) {
                                                                 Log.e("RETROFIT","${t?.message}")
+                                                                edSohbetMesaj.setText("")
                                                             }
 
                                                             override fun onResponse(call: Call<Response<FCMModel>>?, response: Response<Response<FCMModel>>?) {
                                                                 Log.e("RETROFİT","${response.toString()}")
+                                                                edSohbetMesaj.setText("")
                                                             }
 
                                                         })
@@ -172,10 +173,20 @@ class SohbetOdasiActivity : AppCompatActivity() {
 
 
 
-                edSohbetMesaj.setText("")
+
             }
 
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        isActivityOpen = false
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        isActivityOpen = false
     }
 
     private fun getDate():String
@@ -207,7 +218,7 @@ class SohbetOdasiActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         FirebaseAuth.getInstance().addAuthStateListener(mAuthListner!!)
-
+        isActivityOpen = true
     }
 
     override fun onStop() {
@@ -279,6 +290,7 @@ class SohbetOdasiActivity : AppCompatActivity() {
         var sorgu = ref?.child("sohbetOdalari")
                 ?.child(currentRoomId)
                 ?.child("sohbetOdasiMesajlari")
+                ?.orderByKey()
                 ?.addListenerForSingleValueEvent(object:ValueEventListener{
                     override fun onCancelled(p0: DatabaseError?) {
 
@@ -307,17 +319,16 @@ class SohbetOdasiActivity : AppCompatActivity() {
                                             var founedUser = p0!!.children.iterator()?.next()
                                             mesaj.profil_resim = founedUser.getValue(Kullanici::class.java)?.profil_resim
                                             mesaj.adi = founedUser.getValue(Kullanici::class.java)?.isim
-                                            mesajlar?.add(mesaj)
+
                                             myAdapter?.notifyDataSetChanged()
-                                            recyclerSohbetMesajlar.scrollToPosition(mesajlar!!.size-1)
-                                            if(myAdapter == null)
-                                            {
-                                                initMesajlar()
-                                            }
                                         }
 
                                     })
                                 }
+
+                                mesajlar?.add(mesaj)
+                                myAdapter?.notifyDataSetChanged()
+                                recyclerSohbetMesajlar.scrollToPosition(mesajlar!!.size-1)
                             }else
                             {
                                 if(!mesajKeyler.contains(singleSnapshot.key))
@@ -326,20 +337,24 @@ class SohbetOdasiActivity : AppCompatActivity() {
                                     mesaj?.adi = ""
                                     mesaj?.profil_resim = ""
                                     mesajlar?.add(mesaj!!)
+                                    myAdapter?.notifyDataSetChanged()
                                 }
 
-                                if(myAdapter == null)
-                                {
-                                    initMesajlar()
-                                }
 
                             }
 
                         }
 
+
+
                     }
 
                 })
+
+        if(myAdapter == null)
+        {
+            initMesajlar()
+        }
 
     }
 

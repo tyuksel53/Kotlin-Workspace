@@ -25,6 +25,18 @@ class MainActivity : AppCompatActivity() {
 
         initMyAuthListener()
         initFCM()
+        getPenddingActivity()
+    }
+
+    private fun getPenddingActivity() {
+
+        var gelenIntent = intent
+        if(gelenIntent.hasExtra("sohbetOdasiId"))
+        {
+            var intent = Intent(this@MainActivity,SohbetOdasiActivity::class.java)
+            intent.putExtra("sohbetOdasiId",gelenIntent.getStringExtra("sohbetOdasiId"))
+            startActivity(intent)
+        }
 
     }
 
