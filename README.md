@@ -26,7 +26,7 @@ Android ve Kotlinle ilgili temel kavramlar ile ilgili çalışmalarımı içeren
 - Inflater
 - Animasyn
 
-### Uygulaam 3 - Burçlar Rehberi
+### Uygulama 3 - Burçlar Rehberi
 - Listview
 - Adapter
 - Inflation
@@ -37,7 +37,7 @@ Android ve Kotlinle ilgili temel kavramlar ile ilgili çalışmalarımı içeren
 ### Uygulama 6 - Havadurumu
 - Volley Json Api
 
-### UYGULAMA 7 - YoutubeOynatmaListeleri
+### Uygulama 7 - YoutubeOynatmaListeleri
 -  Retrofit ve Youtube Api Kullanımı
 
 ### Uygulama 8 - Firebase BAM
