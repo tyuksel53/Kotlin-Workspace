@@ -1,6 +1,6 @@
 # Kotlin-Workspace
 
-Android ve Kotlinle ilgili temel kavramlar ile ilgili çalışmalarımı içeren repodur. İçerisinde 8 tane android uygulaması ve temel nesneye yönelimli programlamadaki kavramların kotlinde uygulanmış hallerini içermektedir.
+Android ve Kotlinle ilgili temel kavramlar üzerine çalışmalarımı içeren repodur. İçerisinde 8 tane android uygulaması ve temel nesneye yönelimli programlamadaki kavramların kotlinde uygulanmış hallerini içermektedir.
 
 ## Repoda yer alan bazı önemli kavramlar
 
